@@ -1,0 +1,24 @@
+// File: Logger.java
+public class Logger {
+    // Step 2: Private static instance of the same class
+    private static Logger instance;
+
+    // Step 2: Private constructor to prevent instantiation
+    private Logger() {
+        System.out.println("Logger Initialized");
+    }
+
+    // Step 2: Public static method to return the instance
+    public static Logger getInstance() {
+        // Step 3: Lazy initialization - create instance if it doesn't exist
+        if (instance == null) {
+            instance = new Logger();
+        }
+        return instance;
+    }
+
+    // Sample method to simulate logging
+    public void log(String message) {
+        System.out.println("Log: " + message);
+    }
+}
